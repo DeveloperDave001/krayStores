@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin Dashboard — Kray Store</title>
+<link rel="icon" type="image/png" href="lOGO%20-%20Favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/admin.css"/>
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <span>Kray Store</span>
+    <span class="badge">Admin</span>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#" class="nav-item active" data-section="dashboard">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 3h6v6H3V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6z" stroke="currentColor" stroke-width="1.5"/></svg>
+      Dashboard
+    </a>
+    <a href="#" class="nav-item" data-section="orders">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4h12v12H4V4zm0 4h12M8 4v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Orders
+      <span class="nav-badge" id="newOrdersBadge">0</span>
+    </a>
+    <a href="#" class="nav-item" data-section="products">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5v5c0 3.5 3 6.5 7 8 4-1.5 7-4.5 7-8V5l-7-3z" stroke="currentColor" stroke-width="1.5"/></svg>
+      Products
+    </a>
+    <a href="#" class="nav-item" data-section="analytics">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17V9M7 17V5M11 17V11M15 17V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Analytics
+    </a>
+    <a href="#" class="nav-item" data-section="customers">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 17c0-3 3-5 7-5s7 2 7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Customers
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="index.html" class="back-link">← Back to Store</a>
+  </div>
+</aside>
+
+<!-- Mobile sidebar toggle -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Main content -->
+<main class="main-content" id="mainContent">
+
+  <!-- Dashboard Section -->
+  <section class="page-section" id="section-dashboard">
+    <div class="section-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back, Admin. Here's what's happening with your store today.</p>
+      </div>
+      <div class="date-filter">
+        <select id="dashPeriod" onchange="updateDashboard()">
+          <option value="7">Last 7 Days</option>
+          <option value="30" selected>Last 30 Days</option>
+          <option value="90">Last 90 Days</option>
+          <option value="365">This Year</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon revenue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="kpi-info">
+          <p class="kpi-label">Total Revenue</p>
+          <p class="kpi-value" id="kpiRevenue">$0.00</p>
+          <p class="kpi-change" id="kpiRevenueChange">—</p>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon orders">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="kpi-info">
+          <p class="kpi-label">Total Orders</p>
+          <p class="kpi-value" id="kpiOrders">0</p>
+          <p class="kpi-change" id="kpiOrdersChange">—</p>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon products">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="kpi-info">
+          <p class="kpi-label">Total Products</p>
+          <p class="kpi-value" id="kpiProducts">0</p>
+          <p class="kpi-change">Across 4 categories</p>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon avg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="kpi-info">
+          <p class="kpi-label">Avg. Order Value</p>
+          <p class="kpi-value" id="kpiAvg">$0.00</p>
+          <p class="kpi-change" id="kpiAvgChange">—</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="charts-row">
+      <div class="chart-card wide">
+        <div class="chart-header">
+          <h3>Revenue Over Time</h3>
+          <span class="chart-sub" id="revenuePeriodLabel">Last 30 Days</span>
+        </div>
+        <canvas id="revenueChart" height="280"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Sales by Category</h3>
+          <span class="chart-sub">Distribution</span>
+        </div>
+        <canvas id="categoryChart" height="280"></canvas>
+      </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Weekly Revenue</h3>
+          <span class="chart-sub">This Week</span>
+        </div>
+        <canvas id="weeklyChart" height="250"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Monthly Revenue</h3>
+          <span class="chart-sub">This Year</span>
+        </div>
+        <canvas id="monthlyChart" height="250"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Top Products</h3>
+          <span class="chart-sub">By Sales</span>
+        </div>
+        <div class="top-products-list" id="topProductsList"></div>
+      </div>
+    </div>
+
+    <!-- Recent Orders -->
+    <div class="chart-card full">
+      <div class="chart-header">
+        <h3>Recent Orders</h3>
+        <a href="#" class="view-all" data-section="orders">View All →</a>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="recentOrdersTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orders Section -->
+  <section class="page-section hidden" id="section-orders">
+    <div class="section-header">
+      <div>
+        <h1>Orders</h1>
+        <p>Manage and track all customer orders.</p>
+      </div>
+      <div class="order-actions">
+        <input type="text" class="search-input" placeholder="Search orders..." id="orderSearch" oninput="filterOrders()"/>
+        <select id="orderStatusFilter" onchange="filterOrders()">
+          <option value="all">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="processing">Processing</option>
+          <option value="shipped">Shipped</option>
+          <option value="delivered">Delivered</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="kpi-grid order-kpis">
+      <div class="kpi-card small">
+        <p class="kpi-label">Pending</p>
+        <p class="kpi-value" id="statPending">0</p>
+      </div>
+      <div class="kpi-card small">
+        <p class="kpi-label">Processing</p>
+        <p class="kpi-value" id="statProcessing">0</p>
+      </div>
+      <div class="kpi-card small">
+        <p class="kpi-label">Shipped</p>
+        <p class="kpi-value" id="statShipped">0</p>
+      </div>
+      <div class="kpi-card small">
+        <p class="kpi-label">Delivered</p>
+        <p class="kpi-value" id="statDelivered">0</p>
+      </div>
+    </div>
+
+    <div class="chart-card full">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Email</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Qty</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="allOrdersTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="page-section hidden" id="section-products">
+    <div class="section-header">
+      <div>
+        <h1>Products</h1>
+        <p>Manage your product catalog.</p>
+      </div>
+      <button class="btn-primary" onclick="openAddProductModal()">+ Add Product</button>
+    </div>
+
+    <div class="product-filters">
+      <button class="filter-tab active" onclick="filterProducts('all', this)">All Products</button>
+      <button class="filter-tab" onclick="filterProducts('printed-tshirts', this)">Printed T-Shirts</button>
+      <button class="filter-tab" onclick="filterProducts('ankara-materials', this)">Ankara Materials</button>
+      <button class="filter-tab" onclick="filterProducts('ready-made', this)">Ready Made</button>
+      <button class="filter-tab" onclick="filterProducts('round-necks', this)">Round Necks</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <!-- Analytics Section -->
+  <section class="page-section hidden" id="section-analytics">
+    <div class="section-header">
+      <div>
+        <h1>Analytics</h1>
+        <p>Detailed insights to guide your marketing decisions.</p>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card wide">
+        <div class="chart-header">
+          <h3>Revenue vs Orders Trend</h3>
+        </div>
+        <canvas id="trendChart" height="300"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Category Revenue</h3>
+        </div>
+        <div class="category-bars" id="categoryBars"></div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Category Performance</h3>
+          <span class="chart-sub">Revenue & Orders</span>
+        </div>
+        <canvas id="catPerfChart" height="280"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Best Selling Products</h3>
+          <span class="chart-sub">All Time</span>
+        </div>
+        <div class="top-products-list" id="analyticsTopProducts"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>Order Status Breakdown</h3>
+          <span class="chart-sub">Current</span>
+        </div>
+        <canvas id="statusChart" height="280"></canvas>
+      </div>
+    </div>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-icon">📈</div>
+        <h3>Growth Rate</h3>
+        <p class="insight-value" id="growthRate">—</p>
+        <p class="insight-desc">vs previous period</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">🏆</div>
+        <h3>Top Category</h3>
+        <p class="insight-value" id="topCategory">—</p>
+        <p class="insight-desc">highest revenue</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">🛍️</div>
+        <h3>Conversion Rate</h3>
+        <p class="insight-value" id="convRate">—</p>
+        <p class="insight-desc">orders / visitors</p>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon">📊</div>
+        <h3>Avg. Items/Order</h3>
+        <p class="insight-value" id="avgItems">—</p>
+        <p class="insight-desc">per transaction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customers Section -->
+  <section class="page-section hidden" id="section-customers">
+    <div class="section-header">
+      <div>
+        <h1>Customers</h1>
+        <p>View customer information and purchase history.</p>
+      </div>
+    </div>
+    <div class="chart-card full">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Email</th>
+              <th>Orders</th>
+              <th>Total Spent</th>
+              <th>Last Order</th>
+              <th>Favorite Category</th>
+            </tr>
+          </thead>
+          <tbody id="customersTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Add/Edit Product Modal -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTitle">Add New Product</h2>
+      <button class="modal-close" onclick="closeProductModal()">✕</button>
+    </div>
+    <form id="productForm" onsubmit="saveProduct(event)">
+      <input type="hidden" id="editProductId"/>
+      <div class="form-row">
+        <div class="field-group">
+          <label>Product Name *</label>
+          <input type="text" id="prodName" placeholder="e.g. Classic Logo Tee" required/>
+        </div>
+        <div class="field-group">
+          <label>Category *</label>
+          <select id="prodCategory" required>
+            <option value="">Select category</option>
+            <option value="printed-tshirts">Printed T-Shirts</option>
+            <option value="ankara-materials">Ankara Materials</option>
+            <option value="ready-made">Ready Made</option>
+            <option value="round-necks">Round Necks</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field-group">
+          <label>Price ($) *</label>
+          <input type="number" id="prodPrice" step="0.01" min="0" placeholder="29.99" required/>
+        </div>
+        <div class="field-group">
+          <label>Stock Quantity *</label>
+          <input type="number" id="prodStock" min="0" placeholder="100" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Product Image</label>
+        <div class="image-upload" id="imageUpload" onclick="document.getElementById('prodImageFile').click()">
+          <div class="image-preview" id="imagePreview">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>Click to upload image</span>
+          </div>
+        </div>
+        <input type="file" id="prodImageFile" accept="image/*" style="display:none" onchange="handleImageUpload(event)"/>
+        <button type="button" class="btn-remove-img" id="removeImgBtn" onclick="removeImage()" style="display:none">Remove image</button>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="prodDesc" rows="3" placeholder="Product description..."></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" onclick="closeProductModal()">Cancel</button>
+        <button type="submit" class="btn-primary">Save Product</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Order Detail Modal -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <h2>Order Details</h2>
+      <button class="modal-close" onclick="closeOrderModal()">✕</button>
+    </div>
+    <div id="orderDetailContent"></div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -29,7 +29,7 @@
       <div class="nav-actions">
         <a href="t-shirt-shop.html" class="nav-shop-btn">Shop Now</a>
         <button class="nav-cart-btn" onclick="openCart()" aria-label="Open cart">
-          🛒<span class="cart-badge" id="cartBadge">0</span>
+          🛒<span class="cart-badge" id="cartBadge" style="display:none">0</span>
         </button>
         <button class="hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -65,9 +65,6 @@
       <em>Everyday</em><br>
       <span class="strike">Style</span>
     </h1>
-    <p class="hero-sub">
-      Discover curated collections of <strong>premium quality clothing</strong> designed for the modern individual. From statement pieces to everyday essentials — because style should never be compromised.
-    </p>
     <div class="hero-cta">
       <a href="#shop" class="btn-primary">
         Shop Collection
@@ -130,16 +127,13 @@
 <section class="origin" id="origin" aria-labelledby="origin-heading">
   <div class="container">
     <div class="origin-inner">
-      <div class="reveal">
+      <div class="origin-text reveal">
         <p class="origin-label">How It All Began</p>
         <h2 class="origin-h2" id="origin-heading">
-          A Dream We<br>Lived <em>Every Day</em>
+          Look Good <em>Every Day!</em>
         </h2>
         <p class="origin-body">
           Kray Store was born from a simple belief: <strong>everyone deserves to feel confident in what they wear.</strong> We noticed that finding quality clothing at affordable prices was harder than it should be. Too often, stylish meant expensive, and affordable meant compromising on quality.
-        </p>
-        <p class="origin-body">
-          We set out to change that. By building direct relationships with manufacturers and carefully curating our collections, we're able to offer premium quality clothing without the premium price tag. Every piece is chosen with intention — designed to be versatile, durable, and most importantly, make you feel amazing.
         </p>
         <div class="origin-pullquote">
           <p>"We didn't set out to start a fashion brand. We set out to answer a question: why should looking good cost a fortune?"</p>
@@ -148,62 +142,22 @@
         <p class="origin-body">
           The answer we found was simple: <strong>it's about choices.</strong> The fashion industry is full of middlemen and markups. We decided to cut through that — offering the same quality, if not better, at prices that make sense.
         </p>
-        <p class="origin-body">
-          Kray Store was built to change how you think about fashion — one quality piece at a time.
-        </p>
       </div>
-      <div class="origin-visual reveal d2">
-        <div class="origin-img-stack">
-          <div class="origin-img-1">
-            <svg class="field-art" viewBox="0 0 260 340" fill="none" aria-hidden="true">
-              <rect x="0" y="220" width="260" height="120" fill="rgba(255,255,255,0.06)"/>
-              <g stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round">
-                <line x1="60" y1="220" x2="60" y2="80"/>
-                <line x1="90" y1="220" x2="85" y2="60"/>
-                <line x1="120" y1="220" x2="118" y2="50"/>
-                <line x1="150" y1="220" x2="152" y2="65"/>
-                <line x1="180" y1="220" x2="178" y2="75"/>
-                <line x1="210" y1="220" x2="208" y2="85"/>
-              </g>
-              <ellipse cx="60" cy="75" rx="10" ry="22" fill="rgba(232,168,37,0.6)"/>
-              <ellipse cx="85" cy="55" rx="10" ry="22" fill="rgba(232,168,37,0.7)"/>
-              <ellipse cx="118" cy="45" rx="10" ry="22" fill="rgba(232,168,37,0.8)"/>
-              <ellipse cx="152" cy="60" rx="10" ry="22" fill="rgba(232,168,37,0.6)"/>
-              <ellipse cx="178" cy="70" rx="10" ry="22" fill="rgba(232,168,37,0.65)"/>
-              <ellipse cx="208" cy="80" rx="10" ry="22" fill="rgba(232,168,37,0.55)"/>
-              <circle cx="200" cy="60" r="28" fill="rgba(232,168,37,0.15)" stroke="rgba(232,168,37,0.3)" stroke-width="1"/>
-              <circle cx="200" cy="60" r="18" fill="rgba(232,168,37,0.25)"/>
-              <text x="130" y="265" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="rgba(255,255,255,0.85)">Farm Sourced</text>
-              <text x="130" y="285" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.5)">100% Nigerian Grown</text>
-            </svg>
-          </div>
-          <div class="origin-overlap-badge" aria-hidden="true">🌱</div>
-          <div class="origin-img-2">
-            <svg class="grain-art" viewBox="0 0 220 280" fill="none" aria-hidden="true">
-              <ellipse cx="110" cy="170" rx="80" ry="20" fill="var(--sand)" opacity=".7"/>
-              <path d="M30 145 Q30 200 110 210 Q190 200 190 145Z" fill="var(--parchment)"/>
-              <ellipse cx="110" cy="145" rx="65" ry="30" fill="var(--amber)" opacity=".6"/>
-              <ellipse cx="110" cy="138" rx="55" ry="22" fill="var(--amber)" opacity=".5"/>
-              <ellipse cx="110" cy="132" rx="42" ry="16" fill="var(--gold)" opacity=".6"/>
-              <circle cx="85" cy="135" r="4" fill="var(--bark)" opacity=".4"/>
-              <circle cx="98" cy="128" r="3" fill="var(--bark)" opacity=".4"/>
-              <circle cx="115" cy="130" r="4" fill="var(--bark)" opacity=".4"/>
-              <circle cx="130" cy="135" r="3" fill="var(--bark)" opacity=".4"/>
-              <circle cx="120" cy="142" r="4" fill="var(--bark)" opacity=".35"/>
-              <path d="M155 80 Q170 100 162 140" stroke="var(--gray-400)" stroke-width="3" stroke-linecap="round" fill="none"/>
-              <ellipse cx="163" cy="76" rx="10" ry="14" fill="var(--gray-300)"/>
-              <text x="110" y="232" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="var(--gray-700)">Clean Processed</text>
-              <text x="110" y="250" text-anchor="middle" font-size="10" fill="var(--gray-400)">No Additives · No Preservatives</text>
-            </svg>
-          </div>
-          <div class="origin-img-label">
-            <span class="icon">📅</span>
-            <div class="text">
-              <strong>Founded 2022</strong>
-              <span>Lagos, Nigeria</span>
-            </div>
-          </div>
+      <div class="origin-image reveal d2 about-slideshow">
+        <div class="slideshow-container">
+          <img src="img/Blue Empress.jpg" alt="Fashion collection" class="slide active">
+          <img src="img/download (31).jpg" alt="Fashion collection" class="slide">
+          <img src="img/download (30).jpg" alt="Fashion collection" class="slide">
+          <img src="img/download (28).jpg" alt="Fashion collection" class="slide">
         </div>
+        <div class="slideshow-nav">
+          <button class="nav-dot active" data-slide="0"></button>
+          <button class="nav-dot" data-slide="1"></button>
+          <button class="nav-dot" data-slide="2"></button>
+          <button class="nav-dot" data-slide="3"></button>
+        </div>
+        <button class="nav-arrow prev">&#8249;</button>
+        <button class="nav-arrow next">&#8250;</button>
       </div>
     </div>
   </div>
@@ -306,82 +260,6 @@
   </div>
 </section>
 
-<section class="farmers" aria-labelledby="farmers-heading">
-  <div class="container">
-    <div class="farmers-inner">
-      <div class="reveal">
-        <p class="farmers-label">Our Partners</p>
-        <h2 class="farmers-h2" id="farmers-heading">
-          The Artisans Who<br>Make It All <em>Possible</em>
-        </h2>
-        <p class="farmers-body">
-          Behind every Kray Store piece is a skilled artisan — a craftsman who takes pride in their work and understands that quality is in the details. These partners are the heart of what we do.
-        </p>
-        <p class="farmers-body">
-          We believe in treating our partners fairly. Long-term relationships, fair wages, and ethical working conditions aren't just buzzwords for us — they're how we do business.
-        </p>
-        <div class="farmers-pledges">
-          <div class="pledge-item">
-            <div class="pledge-icon">🤝</div>
-            <div class="pledge-text">
-              <h4>Fair Partnerships</h4>
-              <p>We build long-term relationships with our manufacturing partners, ensuring stable orders and fair compensation.</p>
-            </div>
-          </div>
-          <div class="pledge-item">
-            <div class="pledge-icon">✨</div>
-            <div class="pledge-text">
-              <h4>Quality Standards</h4>
-              <p>Every partner meets our strict quality standards. Regular audits ensure consistency and excellence in every piece.</p>
-            </div>
-          </div>
-          <div class="pledge-item">
-            <div class="pledge-icon">🌱</div>
-            <div class="pledge-text">
-              <h4>Sustainable Practices</h4>
-              <p>We prioritize partners who share our commitment to environmental responsibility and ethical manufacturing.</p>
-            </div>
-          </div>
-          <div class="pledge-item">
-            <div class="pledge-icon">📍</div>
-            <div class="pledge-text">
-              <h4>Full Traceability</h4>
-              <p>Know where your clothes come from. We maintain transparency about our supply chain and manufacturing process.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal d2">
-        <div class="farmers-stats">
-          <div class="farm-stat-card highlight">
-            <span class="farm-stat-icon">🧵</span>
-            <div>
-              <div class="farm-stat-num amber">20<span style="font-size:28px">+</span></div>
-              <div class="farm-stat-lbl">Manufacturing partners across multiple countries</div>
-            </div>
-          </div>
-          <div class="farm-stat-card">
-            <div class="farm-stat-num">500+</div>
-            <div class="farm-stat-lbl">Skilled Artisans</div>
-          </div>
-          <div class="farm-stat-card">
-            <div class="farm-stat-num amber">100%</div>
-            <div class="farm-stat-lbl">Quality Checked Before Shipping</div>
-          </div>
-          <div class="farm-stat-card">
-            <div class="farm-stat-num">50+</div>
-            <div class="farm-stat-lbl">Countries Shipped To</div>
-          </div>
-          <div class="farm-stat-card">
-            <div class="farm-stat-num">0</div>
-            <div class="farm-stat-lbl">Compromise on Quality — Ever</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <div class="marquee-strip" aria-hidden="true">
   <div class="marquee-track">
     <span class="marquee-item"><span class="marquee-sep"></span>Premium Quality</span>
@@ -414,51 +292,43 @@
     </div>
     <div class="team-grid">
       <div class="team-card reveal d1">
-        <div class="team-avatar" style="background:linear-gradient(140deg,#1A1A1A,#2D2D2D)">👩🏾‍💼</div>
+        <div class="team-avatar">
+          <img src="team-img/Portrait 🤍 __ Cooperate headshot.jpg" alt="Alexis Ray, Founder & CEO">
+        </div>
         <div class="team-info">
           <h3>Alexis Ray</h3>
           <div class="role">Founder &amp; CEO</div>
           <p>Fashion industry veteran with a passion for making quality style accessible. 10+ years in fashion retail and e-commerce. Visionary behind every Kray Store collection.</p>
-          <div class="team-social">
-            <a href="#" class="t-soc" aria-label="LinkedIn">💼</a>
-            <a href="#" class="t-soc" aria-label="Twitter">🐦</a>
-            <a href="#" class="t-soc" aria-label="Instagram">📸</a>
-          </div>
         </div>
       </div>
       <div class="team-card reveal d2">
-        <div class="team-avatar" style="background:linear-gradient(140deg,#B76E79,#E8846B)">👩🏾‍🎨</div>
+        <div class="team-avatar">
+          <img src="team-img/AI image generation.jpg" alt="Maya Chen, Head of Design">
+        </div>
         <div class="team-info">
           <h3>Maya Chen</h3>
           <div class="role">Head of Design</div>
           <p>Central Saint Martins graduate with an eye for timeless style. Leads our design direction, ensuring every piece is both on-trend and enduring.</p>
-          <div class="team-social">
-            <a href="#" class="t-soc" aria-label="LinkedIn">💼</a>
-            <a href="#" class="t-soc" aria-label="Instagram">📸</a>
-          </div>
         </div>
       </div>
       <div class="team-card reveal d3">
-        <div class="team-avatar" style="background:linear-gradient(140deg,#4A4A4A,#1A1A1A)">👨🏾‍💻</div>
+        <div class="team-avatar">
+          <img src="team-img/download (30).jpg" alt="Marcus Webb, Head of Operations">
+        </div>
         <div class="team-info">
           <h3>Marcus Webb</h3>
           <div class="role">Head of Operations</div>
           <p>Supply chain expert who ensures every order reaches you in perfect condition. Manages our global logistics network and quality control processes.</p>
-          <div class="team-social">
-            <a href="#" class="t-soc" aria-label="LinkedIn">💼</a>
-          </div>
         </div>
       </div>
       <div class="team-card reveal d1">
-        <div class="team-avatar" style="background:linear-gradient(140deg,#1A2744,#2D4A7B)">👩🏾‍🎓</div>
+        <div class="team-avatar">
+          <img src="team-img/download (31).jpg" alt="Sofia Martinez, Head of Customer Experience">
+        </div>
         <div class="team-info">
           <h3>Sofia Martinez</h3>
           <div class="role">Head of Customer Experience</div>
           <p>Customer-first advocate who ensures every interaction with Kray Store is exceptional. Leads our support team to deliver personalized, helpful service.</p>
-          <div class="team-social">
-            <a href="#" class="t-soc" aria-label="LinkedIn">💼</a>
-            <a href="#" class="t-soc" aria-label="Twitter">🐦</a>
-          </div>
         </div>
       </div>
     </div>
@@ -512,68 +382,6 @@
   </div>
 </section>
 
-<section class="sustain" aria-labelledby="sustain-heading">
-  <div class="container">
-    <div class="sustain-inner">
-      <div class="reveal">
-        <p class="sustain-label">Our Commitment</p>
-        <h2 class="sustain-h2" id="sustain-heading">
-          Fashion Forward<br>Without <em>Harming the Planet</em>
-        </h2>
-        <p class="sustain-body">
-          We believe that looking good shouldn't cost the earth. Kray Store is committed to sustainable fashion practices that reduce waste, support ethical manufacturing, and make it easier for you to shop consciously.
-        </p>
-        <div class="sustain-pillars">
-          <div class="pillar reveal d1">
-            <div class="p-icon">♻️</div>
-            <h4>Eco-Friendly Packaging</h4>
-            <p>We use recyclable and biodegradable packaging materials. Nothing goes to landfill unnecessarily.</p>
-          </div>
-          <div class="pillar reveal d2">
-            <div class="p-icon">👗</div>
-            <h4>Quality Over Quantity</h4>
-            <p>By creating durable pieces that last, we reduce the need for frequent replacements and minimize fashion waste.</p>
-          </div>
-          <div class="pillar reveal d3">
-            <div class="p-icon">🤝</div>
-            <h4>Ethical Partners</h4>
-            <p>We work only with manufacturers who share our values — fair wages, safe conditions, and responsible practices.</p>
-          </div>
-          <div class="pillar reveal d4">
-            <div class="p-icon">🌱</div>
-            <h4>Tree Planting</h4>
-            <p>For every 50 orders placed, we plant a tree. Your fashion choices can help heal the planet.</p>
-          </div>
-        </div>
-      </div>
-      <div class="sustain-visual reveal d2">
-        <div class="sustain-big-card">
-          <span class="big-emoji">🌍</span>
-          <h3>Our 2026 Sustainability Goals</h3>
-          <p>We have set ambitious targets to make Kray Store more sustainable — because style and sustainability can go hand in hand.</p>
-          <div class="sustain-progress">
-            <div class="sp-row"><span>Eco Packaging</span><span>60% → 100%</span></div>
-            <div class="sp-bar"><div class="sp-fill" style="width:60%"></div></div>
-            <div class="sp-row"><span>Carbon Offset</span><span>30% → 80%</span></div>
-            <div class="sp-bar"><div class="sp-fill" style="width:30%"></div></div>
-            <div class="sp-row"><span>Tree Planting</span><span>100 → 1000 trees</span></div>
-            <div class="sp-bar"><div class="sp-fill" style="width:10%"></div></div>
-            <div class="sp-row"><span>Ethical Partners</span><span>20 → 50 partners</span></div>
-            <div class="sp-bar"><div class="sp-fill" style="width:40%"></div></div>
-          </div>
-        </div>
-        <div class="sustain-floating">
-          <span class="sf-icon">🌱</span>
-          <div>
-            <strong>Tree Planting</strong>
-            <span>1 tree per 50 orders</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="cta-band" aria-labelledby="cta-heading">
   <div class="container" style="position:relative;z-index:1">
     <p class="label">Ready to Elevate Your Style?</p>
@@ -599,12 +407,6 @@
           Kray Store
         </div>
         <p>Elevate your style with our curated collection of premium quality clothing. Fashion that's designed to make you feel confident.</p>
-        <div class="footer-social">
-          <a href="#" class="soc-btn" aria-label="Instagram">📸</a>
-          <a href="#" class="soc-btn" aria-label="Facebook">📘</a>
-          <a href="#" class="soc-btn" aria-label="TikTok">🎵</a>
-          <a href="#" class="soc-btn" aria-label="WhatsApp">💬</a>
-        </div>
       </div>
       <div class="footer-col">
         <h4>Shop</h4>
@@ -686,6 +488,5 @@
     <p class="secure-note">🔒 Secure checkout · Free returns</p>
   </div>
 </aside>
-<script src="js/shop.js"></script>
 </body>
 </html>
