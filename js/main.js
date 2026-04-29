@@ -10,7 +10,7 @@ function toggleMenu() {
   mn.classList.toggle('open');
   mn.style.display = mn.style.display === 'none' ? 'flex' : (mn.style.display === 'flex' && !mn.classList.contains('open') ? 'none' : 'flex');
 }
-document.getElementById('mobileNav').style.display = 'flex';
+document.getElementById('mobileNav').style.display = 'none';
 
 /* Scroll reveal */
 const reveals = document.querySelectorAll('.reveal');
