@@ -45,70 +45,48 @@
   </nav>
 </header>
 
-<section class="hero" aria-labelledby="hero-heading">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-circle" aria-hidden="true"></div>
-  <div class="hero-circle-2" aria-hidden="true"></div>
-  <svg class="hero-leaf-ring" viewBox="0 0 560 560" fill="none" aria-hidden="true">
-    <g>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(30 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(60 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(90 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(120 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(150 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(180 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(210 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(240 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(270 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(300 280 280)"/>
-      <path d="M280 40 Q300 160 280 280 Q260 160 280 40Z" fill="currentColor" transform="rotate(330 280 280)"/>
-    </g>
-  </svg>
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-left">
-        <div class="hero-kicker">Our Story</div>
-        <h1 class="hero-h1" id="hero-heading">
-          Elevating
-          <span class="line-italic">Your Style</span>
-          <span class="line-small">One Outfit at a Time</span>
-        </h1>
-        <p class="hero-lede">
-          We are <strong>Kray Store</strong> — a fashion brand on a mission to make premium quality clothing accessible to everyone. We believe that looking good shouldn't mean compromising on quality or breaking the bank.
-        </p>
-        <div class="hero-btns">
-          <a href="#origin" class="btn-primary">
-            Read Our Story
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="t-shirt-shop.html" class="btn-outline">Shop Collection →</a>
-        </div>
+<!-- =========================================
+     HERO
+     ========================================= -->
+<section class="hero" aria-label="Hero section">
+  <div class="hero-video-wrap">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="bgVideo.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      New Season Collection 2026
+    </div>
+    <h1 class="hero-h1">
+      Elevate Your<br>
+      <em>Everyday</em><br>
+      <span class="strike">Style</span>
+    </h1>
+    <p class="hero-sub">
+      Discover curated collections of <strong>premium quality clothing</strong> designed for the modern individual. From statement pieces to everyday essentials — because style should never be compromised.
+    </p>
+    <div class="hero-cta">
+      <a href="#shop" class="btn-primary">
+        Shop Collection
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#about" class="btn-ghost">
+        Our Story
+      </a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-avatars">
+        <span>S</span>
+        <span>M</span>
+        <span>J</span>
+        <span>K</span>
       </div>
-      <div class="hero-right" aria-hidden="true">
-        <svg class="hero-grain-art" viewBox="0 0 200 200" fill="none">
-          <circle cx="100" cy="100" r="80" stroke="var(--charcoal)" stroke-width="1" stroke-dasharray="8 4"/>
-          <circle cx="100" cy="100" r="55" stroke="var(--charcoal)" stroke-width=".5" stroke-dasharray="4 6"/>
-          <circle cx="100" cy="100" r="30" fill="var(--charcoal)" opacity=".3"/>
-          <text x="100" y="106" text-anchor="middle" font-size="18">✨</text>
-        </svg>
-        <div class="hero-card-main">
-          <span class="card-emoji">👗</span>
-          <h3>Designed with<br>Purpose</h3>
-          <p>Every piece in our collection is thoughtfully designed to make you look and feel your absolute best — from everyday essentials to statement pieces.</p>
-        </div>
-        <div class="hero-stat-pill">
-          <span class="stat-icon">✨</span>
-          <div class="stat-text">
-            <strong>500+</strong>
-            <span>Curated Styles</span>
-          </div>
-        </div>
-        <div class="hero-card-sec">
-          <div class="sec-icon">🏆</div>
-          <h4>Quality You Can Trust</h4>
-          <p>Premium fabrics, expert craftsmanship, and attention to detail in every stitch. Quality that lasts.</p>
-        </div>
+      <div class="hero-trust-text">
+        <div class="hero-stars">★★★★★</div>
+        <div><strong>5,000+ happy customers</strong> worldwide</div>
       </div>
     </div>
   </div>
